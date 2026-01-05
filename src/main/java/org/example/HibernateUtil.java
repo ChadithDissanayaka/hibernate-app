@@ -15,11 +15,16 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
+                .addAnnotatedClass(Customer.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
 
         return metadata.getSessionFactoryBuilder()
                 .build();
+    }
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 }
