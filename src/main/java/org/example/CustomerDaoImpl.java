@@ -33,11 +33,14 @@ public class CustomerDaoImpl {
     }
 
     // Delete
-    public static void delete(Customer customer) {
+    public static void delete(String id) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.delete(customer);
+            Customer foundCustomer = CustomerDaoImpl.findById(id);
+            if (foundCustomer != null) {
+                session.delete(foundCustomer);
+            }
             transaction.commit();
         } catch (Exception ex) {
             if (transaction != null) transaction.rollback();

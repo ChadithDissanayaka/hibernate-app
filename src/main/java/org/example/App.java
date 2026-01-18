@@ -55,7 +55,7 @@ public class App
         System.out.println(updatedCustomer);
 
         // ================= DELETE =================
-        CustomerDaoImpl.delete(c3);
+        CustomerDaoImpl.delete(c3.getId());
         System.out.println("\n✔ Customer deleted");
 
         // Verify delete
