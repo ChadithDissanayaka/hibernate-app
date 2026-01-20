@@ -10,21 +10,21 @@ public class App
                 UUID.randomUUID().toString(),
                 "Chadith Dissanayaka",
                 "Embilipitiya",
-                250000
+                250000,null,null
         );
 
         Customer c2 = new Customer(
                 UUID.randomUUID().toString(),
                 "Nimal Perera",
                 "Colombo",
-                180000
+                180000,null,null
         );
 
         Customer c3 = new Customer(
                 UUID.randomUUID().toString(),
                 "Kamal Silva",
                 "Galle",
-                150000
+                150000,null,null
         );
 
         CustomerDaoImpl.save(c1);

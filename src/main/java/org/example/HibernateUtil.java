@@ -17,6 +17,9 @@ public class HibernateUtil {
         Metadata metadata = new MetadataSources(standardRegistry)
                 //after creating entity we must say add this, Without this, Hibernate will not know about your table
                 .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Product.class)
+                .addAnnotatedClass(Vehicle.class)
+                .addAnnotatedClass(Orders.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
